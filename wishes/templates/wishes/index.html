@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'wishes/style.css' %}">
+
+Список молитв: <br>
+{% if wishes_list %}
+    {% for wish in wishes_list %}
+    [{{ wish.rarity }}] {{ wish.time|date:"m.d.y H:i" }} {{ wish.name }}<br>
+    {% endfor %}
+{% else %}
+    <p>No wishes are available.</p>
+{% endif %}
+<br>
