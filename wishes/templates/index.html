@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+
+Список молитв: <br>
+{% if wishes_list %}
+    <table class=".brd">
+    <tr>
+        <th>Время</th>
+        <th>Название</th>
+        <th>Редкость</th>
+    </tr>
+    {% for wish in wishes_list %}
+        <tr
+                {% if wish.rarity == 5 %} bgcolor="#ffd700" {% endif %}
+                {% if wish.rarity == 4 %} bgcolor="#00bfff" {% endif %}
+        >
+
+            <td>{{ wish.time|date:"m.d.y H:i" }}</td>
+            <td>{{ wish.name }}</td>
+            <td>{{ wish.rarity }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No wishes are available.</p>
+{% endif %}
+<br>

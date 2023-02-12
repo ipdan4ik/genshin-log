@@ -1,0 +1,5 @@
+{% load static %}
+
+table, th, td {
+    border: thin solid black;
+}
