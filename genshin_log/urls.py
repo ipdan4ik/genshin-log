@@ -20,8 +20,4 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('wishes/', include('wishes.urls')),
     path('admin/', admin.site.urls),
-    path('css/style.css', TemplateView.as_view(
-        template_name='style.css',
-        content_type='text/css')
-         ),
 ]

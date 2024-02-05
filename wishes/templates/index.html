@@ -1,5 +1,33 @@
 {% load static %}
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="{% static 'wishes/style.css' %}" type="text/css">
+
+<table class=".stats_table">
+    <tr>
+        <th>Редкость</th>
+        <th>Количество круток</th>
+        <th>Вероятность</th>
+        <th>Средняя крутка</th>
+        <th>Последняя крутка</th>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td> {{ wishes_count.4 }} </td>
+        <td> {{ probabilities.4 }} %</td>
+        <td> {{ median_roll_count.4 }} </td>
+        <td> {{ counters.4 }} </td>
+    </tr>
+
+     <tr>
+        <td>5</td>
+        <td> {{ wishes_count.5 }} </td>
+        <td> {{ probabilities.5 }} %</td>
+        <td> {{ median_roll_count.5 }} </td>
+        <td> {{ counters.5 }} </td>
+    </tr>
+
+</table>
+
 
 Список молитв: <br>
 {% if wishes_list %}
@@ -14,7 +42,6 @@
                 {% if wish.rarity == 5 %} bgcolor="#ffd700" {% endif %}
                 {% if wish.rarity == 4 %} bgcolor="#00bfff" {% endif %}
         >
-
             <td>{{ wish.time|date:"m.d.y H:i" }}</td>
             <td>{{ wish.name }}</td>
             <td>{{ wish.rarity }}</td>

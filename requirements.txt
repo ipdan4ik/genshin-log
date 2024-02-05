@@ -1,3 +1,3 @@
 Django~=4.1.6
-genshin~=1.2.4
+genshin
 pytz~=2022.4
